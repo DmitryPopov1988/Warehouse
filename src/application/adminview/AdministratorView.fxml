@@ -1,5 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.chart.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 <?import java.net.URL?>
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.chart.BarChart?>
@@ -28,7 +36,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="800.0" prefWidth="1000.0" style="-fx-background-color: #FFFFFF;" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.adminview.AdministratorViewController">
+<AnchorPane prefHeight="800.0" prefWidth="1000.0" style="-fx-background-color: #FFFFFF;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.adminview.AdministratorViewController">
    <children>
       <VBox layoutY="145.0" prefHeight="663.0" prefWidth="280.0">
          <children>
@@ -110,17 +118,6 @@
       </Pane>
       <StackPane fx:id="stackPane" layoutX="270.0" layoutY="145.0" prefHeight="663.0" prefWidth="746.0">
          <children>
-            <GridPane fx:id="settingsGridPane" style="-fx-background-color: #FFFFFF;">
-              <columnConstraints>
-                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-              </columnConstraints>
-              <rowConstraints>
-                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-              </rowConstraints>
-            </GridPane>
             <GridPane fx:id="mainGridPane" style="-fx-background-color: #FFFFFF;">
               <columnConstraints>
                 <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
@@ -134,76 +131,6 @@
                         <Image url="@images/FoF1.jpg" />
                      </image>
                   </ImageView>
-               </children>
-            </GridPane>
-            <GridPane fx:id="goodsMovementGridPane" style="-fx-background-color: #FFFFFF;">
-              <columnConstraints>
-                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-              </columnConstraints>
-              <rowConstraints>
-                <RowConstraints maxHeight="215.0" minHeight="10.0" prefHeight="92.0" vgrow="SOMETIMES" />
-                <RowConstraints maxHeight="534.0" minHeight="10.0" prefHeight="453.0" vgrow="SOMETIMES" />
-                <RowConstraints maxHeight="310.0" minHeight="10.0" prefHeight="117.0" vgrow="SOMETIMES" />
-              </rowConstraints>
-               <children>
-                  <Pane prefHeight="107.0" prefWidth="746.0" style="-fx-background-color: #FFBA17;">
-                     <children>
-                        <DatePicker fx:id="datePickerFrom" layoutX="14.0" layoutY="30.0" prefHeight="37.0" prefWidth="156.0" promptText="From date" style="-fx-background-color: #FFDC00;" />
-                        <DatePicker fx:id="datePickerTo" layoutX="186.0" layoutY="30.0" prefHeight="37.0" prefWidth="156.0" promptText="To date" style="-fx-background-color: #FFDC00;" />
-                        <ComboBox fx:id="supplierComboBoxTwo" layoutX="359.0" layoutY="30.0" prefWidth="150.0" style="-fx-background-radius: 20; -fx-border-radius: 20;" stylesheets="@../css/combobox.css" />
-                        <Button fx:id="showGoodsForExportButton" layoutX="568.0" layoutY="28.0" mnemonicParsing="false" onAction="#getDataAboutGoodsFromDB" prefHeight="25.0" prefWidth="164.0" style="-fx-background-radius: 20; -fx-border-radius: 20;" stylesheets="@../css/button2.css" text="SHOW GOODS">
-                           <font>
-                              <Font size="16.0" />
-                           </font>
-                        </Button>
-                        <Label layoutX="14.0" layoutY="5.0" text="Current date: " />
-                        <Label fx:id="dateLabelTwo" layoutX="107.0" layoutY="5.0" text="Label" />
-                     </children>
-                  </Pane>
-                  <Pane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #FFBA17;" GridPane.rowIndex="2">
-                     <children>
-                        <Label layoutX="404.0" layoutY="16.0" text="Total sum in Dollars: ">
-                           <font>
-                              <Font size="22.0" />
-                           </font>
-                        </Label>
-                        <Label fx:id="sumOfGoodsLabel" layoutX="633.0" layoutY="16.0" text="0.0">
-                           <font>
-                              <Font size="22.0" />
-                           </font>
-                        </Label>
-                        <TextField fx:id="quantityTextField" layoutX="14.0" layoutY="12.0" prefHeight="39.0" prefWidth="323.0" promptText="Quantity" style="-fx-background-radius: 20; -fx-border-color: #15120E; -fx-border-radius: 20;">
-                           <font>
-                              <Font size="16.0" />
-                           </font>
-                        </TextField>
-                        <Button fx:id="editQuantityInMovmentTableViewButton" layoutX="13.0" layoutY="67.0" mnemonicParsing="false" onAction="#editQuantityInTableView" prefHeight="37.0" prefWidth="150.0" style="-fx-background-radius: 20; -fx-border-radius: 20;" stylesheets="@../css/button2.css" text="Change quantity">
-                           <font>
-                              <Font size="16.0" />
-                           </font>
-                        </Button>
-                        <Button fx:id="departureOfGoodsFromWarehauseButton" layoutX="399.0" layoutY="67.0" mnemonicParsing="false" onAction="#departureGoodsFromWarehause" prefHeight="25.0" prefWidth="333.0" style="-fx-background-radius: 20; -fx-border-radius: 20;" stylesheets="@../css/button2.css" text="DISPOSALS OF GOODS">
-                           <font>
-                              <Font size="16.0" />
-                           </font>
-                        </Button>
-                        <Button fx:id="deleteRecordFromMovementTableView" layoutX="192.0" layoutY="67.0" mnemonicParsing="false" onAction="#deleteRecordFromMovementTable" prefHeight="37.0" prefWidth="150.0" style="-fx-background-radius: 20; -fx-border-radius: 20;" stylesheets="@../css/button2.css" text="Delete record">
-                           <font>
-                              <Font size="16.0" />
-                           </font>
-                        </Button>
-                     </children>
-                  </Pane>
-                  <TableView fx:id="movementTableView" onMouseClicked="#displaySelectedQuantity" prefHeight="454.0" prefWidth="746.0" stylesheets="@../css/button3.css" GridPane.rowIndex="1">
-                    <columns>
-                      <TableColumn fx:id="idSupplierMovementTableColumn" prefWidth="124.0" text="ID Supplier" />
-                      <TableColumn fx:id="receiptDateMovementTableViewColumn" prefWidth="124.0" text="Receipt date" />
-                        <TableColumn fx:id="productNameMovamentTableViewColumn" prefWidth="124.0" text="Product name" />
-                        <TableColumn fx:id="quantityMovementTableViewColumn" prefWidth="124.0" text="Quantuty" />
-                        <TableColumn fx:id="priceMovementTableViewColumn" prefWidth="124.0" text="Price" />
-                        <TableColumn fx:id="amountMovementTableViewColumn" prefWidth="124.0" text="Amount $" />
-                    </columns>
-                  </TableView>
                </children>
             </GridPane>
             <GridPane fx:id="reportsGridPane" style="-fx-background-color: #FBD7D4;">
@@ -462,6 +389,17 @@
                   </GridPane>
                </children>
             </GridPane>
+            <GridPane fx:id="settingsGridPane" style="-fx-background-color: A498CF;">
+              <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+            </GridPane>
             <GridPane fx:id="goodsReceiptGridPane" style="-fx-background-color: #FFFFFF;">
                <columnConstraints>
                   <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
@@ -525,7 +463,7 @@
                                                 <Font size="16.0" />
                                              </font>
                                           </TextField>
-                                          <Button fx:id="removeProductFromReceiptTableView" mnemonicParsing="false" onAction="#removeSelectedRecordFromReceiptTableView" prefHeight="31.0" prefWidth="194.0" style="-fx-background-radius: 20; -fx-border-radius: 20;" stylesheets="@../css/button2.css" text="REMOVE" GridPane.columnIndex="1">
+                                          <Button fx:id="removeProductFromReceiptTableView" mnemonicParsing="false" onAction="#removeSelectedRecordFromReceiptTableView" prefHeight="42.0" prefWidth="155.0" style="-fx-background-radius: 20; -fx-border-radius: 20;" stylesheets="@../css/button2.css" text="REMOVE" GridPane.columnIndex="1">
                                              <font>
                                                 <Font size="16.0" />
                                              </font>
@@ -533,7 +471,7 @@
                                                 <Insets right="30.0" />
                                              </GridPane.margin>
                                           </Button>
-                                          <Button fx:id="updateProductInTableViewButton" mnemonicParsing="false" onAction="#updateSelectedRecordFromReceiptTableView" prefHeight="31.0" prefWidth="205.0" style="-fx-background-radius: 20; -fx-border-radius: 20;" stylesheets="@../css/button2.css" text="UPDATE" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                                          <Button fx:id="updateProductInTableViewButton" mnemonicParsing="false" onAction="#updateSelectedRecordFromReceiptTableView" prefHeight="42.0" prefWidth="156.0" style="-fx-background-radius: 20; -fx-border-radius: 20;" stylesheets="@../css/button2.css" text="UPDATE" GridPane.columnIndex="1" GridPane.rowIndex="1">
                                              <font>
                                                 <Font size="16.0" />
                                              </font>
@@ -541,7 +479,7 @@
                                                 <Insets right="30.0" />
                                              </GridPane.margin>
                                           </Button>
-                                          <Button fx:id="addProductToTableView" mnemonicParsing="false" onAction="#addGoodsToTableView" prefHeight="31.0" prefWidth="211.0" style="-fx-background-radius: 20; -fx-border-radius: 20;" stylesheets="@../css/button2.css" text="ADD TO TABLE" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                                          <Button fx:id="addProductToTableView" mnemonicParsing="false" onAction="#addGoodsToTableView" prefHeight="42.0" prefWidth="156.0" style="-fx-background-radius: 20; -fx-border-radius: 20;" stylesheets="@../css/button2.css" text="ADD TO TABLE" GridPane.columnIndex="1" GridPane.rowIndex="2">
                                              <font>
                                                 <Font size="16.0" />
                                              </font>
@@ -594,7 +532,7 @@
                                           <Font size="22.0" />
                                        </font>
                                     </Label>
-                                    <Button fx:id="insertToDatabaseReceipt" layoutX="400.0" layoutY="585.0" mnemonicParsing="false" onAction="#insertIntoDataBaseReceipt" prefHeight="42.0" prefWidth="333.0" style="-fx-background-radius: 20; -fx-border-radius: 20;" text="INSERT INTO DATABASE">
+                                    <Button fx:id="insertToDatabaseReceipt" layoutX="383.0" layoutY="578.0" mnemonicParsing="false" onAction="#insertIntoDataBaseReceipt" prefHeight="42.0" prefWidth="333.0" style="-fx-background-radius: 20; -fx-border-radius: 20;" text="INSERT INTO DATABASE">
                                        <font>
                                           <Font size="16.0" />
                                        </font>
@@ -741,18 +679,80 @@
                   </TabPane>
                </children>
             </GridPane>
+            <GridPane fx:id="goodsMovementGridPane" style="-fx-background-color: #FFFFFF;">
+              <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints maxHeight="215.0" minHeight="10.0" prefHeight="92.0" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="534.0" minHeight="10.0" prefHeight="453.0" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="310.0" minHeight="10.0" prefHeight="117.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <Pane prefHeight="107.0" prefWidth="746.0" style="-fx-background-color: #FFBA17;">
+                     <children>
+                        <DatePicker fx:id="datePickerFrom" layoutX="14.0" layoutY="30.0" prefHeight="37.0" prefWidth="156.0" promptText="From date" style="-fx-background-color: #FFDC00;" />
+                        <DatePicker fx:id="datePickerTo" layoutX="186.0" layoutY="30.0" prefHeight="37.0" prefWidth="156.0" promptText="To date" style="-fx-background-color: #FFDC00;" />
+                        <ComboBox fx:id="supplierComboBoxTwo" layoutX="359.0" layoutY="30.0" prefHeight="37.0" prefWidth="164.0" style="-fx-background-radius: 20; -fx-border-radius: 20;" stylesheets="@../css/combobox.css" />
+                        <Button fx:id="showGoodsForExportButton" layoutX="568.0" layoutY="28.0" mnemonicParsing="false" onAction="#getDataAboutGoodsFromDB" prefHeight="42.0" prefWidth="150.0" style="-fx-background-radius: 20; -fx-border-radius: 20;" stylesheets="@../css/button2.css" text="SHOW GOODS">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                        </Button>
+                        <Label layoutX="14.0" layoutY="5.0" text="Current date: " />
+                        <Label fx:id="dateLabelTwo" layoutX="107.0" layoutY="5.0" text="Label" />
+                     </children>
+                  </Pane>
+                  <Pane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #FFBA17;" GridPane.rowIndex="2">
+                     <children>
+                        <Label layoutX="404.0" layoutY="16.0" text="Total sum in Dollars: ">
+                           <font>
+                              <Font size="22.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="sumOfGoodsLabel" layoutX="633.0" layoutY="16.0" text="0.0">
+                           <font>
+                              <Font size="22.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="quantityTextField" layoutX="14.0" layoutY="12.0" prefHeight="39.0" prefWidth="323.0" promptText="Quantity" style="-fx-background-radius: 20; -fx-border-color: #15120E; -fx-border-radius: 20;">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                        </TextField>
+                        <Button fx:id="editQuantityInMovmentTableViewButton" layoutX="14.0" layoutY="59.0" mnemonicParsing="false" onAction="#editQuantityInTableView" prefHeight="37.0" prefWidth="150.0" style="-fx-background-radius: 20; -fx-border-radius: 20;" stylesheets="@../css/button2.css" text="Change quantity">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                        </Button>
+                        <Button fx:id="departureOfGoodsFromWarehauseButton" layoutX="391.0" layoutY="59.0" mnemonicParsing="false" onAction="#departureGoodsFromWarehause" prefHeight="42.0" prefWidth="323.0" style="-fx-background-radius: 20; -fx-border-radius: 20;" stylesheets="@../css/button2.css" text="DISPOSALS OF GOODS">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                        </Button>
+                        <Button fx:id="deleteRecordFromMovementTableView" layoutX="187.0" layoutY="59.0" mnemonicParsing="false" onAction="#deleteRecordFromMovementTable" prefHeight="37.0" prefWidth="150.0" style="-fx-background-radius: 20; -fx-border-radius: 20;" stylesheets="@../css/button2.css" text="Delete record">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                        </Button>
+                     </children>
+                  </Pane>
+                  <TableView fx:id="movementTableView" onMouseClicked="#displaySelectedQuantity" prefHeight="454.0" prefWidth="746.0" stylesheets="@../css/button3.css" GridPane.rowIndex="1">
+                    <columns>
+                      <TableColumn fx:id="idSupplierMovementTableColumn" prefWidth="124.0" text="ID Supplier" />
+                      <TableColumn fx:id="receiptDateMovementTableViewColumn" prefWidth="124.0" text="Receipt date" />
+                        <TableColumn fx:id="productNameMovamentTableViewColumn" prefWidth="124.0" text="Product name" />
+                        <TableColumn fx:id="quantityMovementTableViewColumn" prefWidth="124.0" text="Quantuty" />
+                        <TableColumn fx:id="priceMovementTableViewColumn" prefWidth="124.0" text="Price" />
+                        <TableColumn fx:id="amountMovementTableViewColumn" prefWidth="124.0" text="Amount $" />
+                    </columns>
+                  </TableView>
+               </children>
+            </GridPane>
          </children>
       </StackPane>
       <StackPane layoutX="270.0" layoutY="-10.0" prefHeight="155.0" prefWidth="746.0" style="-fx-background-color: #008BC1;">
          <children>
-            <Pane fx:id="settingsPane" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #8673C5; -fx-border-color: #FFFFFF;">
-               <children>
-                  <Label layoutX="24.0" layoutY="56.0" text="//Home/Settings">
-                     <font>
-                        <Font size="35.0" />
-                     </font>
-                  </Label>
-               </children></Pane>
             <Pane fx:id="goodsMovementPane" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #FFBA17; -fx-border-color: #FFFFFF;">
                <children>
                   <Label layoutX="24.0" layoutY="56.0" text="//Home/Goods movement">
@@ -789,6 +789,14 @@
             <Pane fx:id="reportsPane" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #FBD7D4; -fx-border-color: #FFFFFF;">
                <children>
                   <Label layoutX="24.0" layoutY="56.0" text="//Home/Analysis">
+                     <font>
+                        <Font size="35.0" />
+                     </font>
+                  </Label>
+               </children></Pane>
+            <Pane fx:id="settingsPane" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: A498CF; -fx-border-color: #FFFFFF;">
+               <children>
+                  <Label layoutX="24.0" layoutY="56.0" text="//Home/Settings">
                      <font>
                         <Font size="35.0" />
                      </font>

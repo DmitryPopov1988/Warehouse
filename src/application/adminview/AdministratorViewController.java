@@ -61,37 +61,37 @@ import javafx.stage.FileChooser.ExtensionFilter;
 import javafx.util.StringConverter;
 
 public class AdministratorViewController implements Initializable {
-	
-    @FXML
-    private Label analysysFirstLabel;
-    @FXML
-    private Label analysysSecondLabel;
-    @FXML
-    private Label analysysThirdLabel;
-    @FXML
-    private Label analysysLabel;
-    @FXML
-    private Label receiptsLabel;
-    @FXML
-    private Label stocksLabel;
-    @FXML
-    private Label disposalsLabel;
-    @FXML
-    private Label reportsStatusLabel;
-    @FXML
-    private PieChart reportsPieChart;
-    @FXML
-    private BarChart<?, ?> reportBarChart;
-    @FXML
-    private DatePicker reportDatePickerTo;
-    @FXML
-    private DatePicker reportDatePickerFrom;
-    @FXML
-    private Button reportShowDataButton;
-    @FXML
-    private CategoryAxis axisX;
-    @FXML
-    private NumberAxis axisY;
+
+	@FXML
+	private Label analysysFirstLabel;
+	@FXML
+	private Label analysysSecondLabel;
+	@FXML
+	private Label analysysThirdLabel;
+	@FXML
+	private Label analysysLabel;
+	@FXML
+	private Label receiptsLabel;
+	@FXML
+	private Label stocksLabel;
+	@FXML
+	private Label disposalsLabel;
+	@FXML
+	private Label reportsStatusLabel;
+	@FXML
+	private PieChart reportsPieChart;
+	@FXML
+	private BarChart<?, ?> reportBarChart;
+	@FXML
+	private DatePicker reportDatePickerTo;
+	@FXML
+	private DatePicker reportDatePickerFrom;
+	@FXML
+	private Button reportShowDataButton;
+	@FXML
+	private CategoryAxis axisX;
+	@FXML
+	private NumberAxis axisY;
 	@FXML
 	private Button departureOfGoodsFromWarehauseButton;
 	@FXML
@@ -286,7 +286,7 @@ public class AdministratorViewController implements Initializable {
 	private FilteredList<Users> filteredData;
 	private FilteredList<Supplier> supplierFilteredData;
 	double stocks, receipts, disposals;
-	
+
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) {
 
@@ -350,7 +350,6 @@ public class AdministratorViewController implements Initializable {
 			}
 		};
 
-
 		reportsStatusLabel.setVisible(false);
 		datePickerFrom.setConverter(converter);
 		datePickerFrom.requestFocus();
@@ -358,8 +357,8 @@ public class AdministratorViewController implements Initializable {
 		datePickerTo.requestFocus();
 		reportDatePickerTo.setConverter(converter);
 		reportDatePickerTo.requestFocus();
-	    reportDatePickerFrom.setConverter(converter);
-	    reportDatePickerFrom.requestFocus();
+		reportDatePickerFrom.setConverter(converter);
+		reportDatePickerFrom.requestFocus();
 	}
 
 	@FXML
@@ -429,12 +428,10 @@ public class AdministratorViewController implements Initializable {
 			data = FXCollections.observableArrayList();
 			ResultSet rs = ConnectionToSQL.getConnection().createStatement().executeQuery("SELECT * FROM users");
 			while (rs.next()) {
-				data.add(new Users(rs.getString(1), rs.getString(2), rs.getString(3), rs.getString(4), rs.getString(5),
+				String password = rs.getString(5).replaceAll(".", "*");
+				data.add(new Users(rs.getString(1), rs.getString(2), rs.getString(3), rs.getString(4), password,
 						rs.getString(6), rs.getString(7)));
 				filteredData = new FilteredList<>(data, e -> true);
-				System.out.println(rs.getString("idusers") + rs.getString("FirstName") + rs.getString("LastName")
-						+ rs.getString("Login") + rs.getString("Password") + rs.getString("Email")
-						+ rs.getString("Role"));
 			}
 			employeeTableView.setItems(null);
 			employeeTableView.setItems(data);
@@ -550,8 +547,6 @@ public class AdministratorViewController implements Initializable {
 			System.out.println(exc);
 		}
 	}
-	
-
 
 	@FXML
 	private void updateEmployeeDataInDB(ActionEvent event) throws SQLException {
@@ -690,7 +685,7 @@ public class AdministratorViewController implements Initializable {
 			employeeLastNameTextField.setText(users.getLn());
 			employeeEmailAddressTextField.setText(users.getEm());
 			employeeLoginTextField.setText(users.getLo());
-			employeePasswordTextField.setText(users.getPa());
+			/* employeePasswordTextField.setText(users.getPa()); */
 		}
 	}
 
@@ -716,8 +711,6 @@ public class AdministratorViewController implements Initializable {
 				data.add(new Supplier(rs.getString(1), rs.getString(2), rs.getString(3), rs.getString(4),
 						rs.getString(5), rs.getString(6)));
 				supplierFilteredData = new FilteredList<>(data, e -> true);
-				System.out.println(rs.getString("idsuppliers") + rs.getString("name") + rs.getString("country")
-						+ rs.getString("address") + rs.getString("phone") + rs.getString("contract"));
 			}
 			setDataIntoChoiseBox();
 			supplierTableView.setItems(null);
@@ -735,7 +728,6 @@ public class AdministratorViewController implements Initializable {
 		String address = supplierAddressTextField.getText();
 		String phone = supplierPhoneNumberTextField.getText();
 		String contract = supplierContractTextField.getText();
-
 		String query = "INSERT INTO suppliers (name, country, address, phone, contract) VALUES (?, ?, ?, ?, ?)";
 		PreparedStatement preparedStatement = null;
 		try {
@@ -966,8 +958,6 @@ public class AdministratorViewController implements Initializable {
 			ResultSet rs = ConnectionToSQL.getConnection().createStatement().executeQuery("SELECT * FROM suppliers");
 			while (rs.next()) {
 				choise.add(rs.getString("name"));
-				System.out.println(rs.getString("idsuppliers") + rs.getString("name") + rs.getString("country")
-						+ rs.getString("address") + rs.getString("phone") + rs.getString("contract"));
 			}
 			supplierComboBox.setItems(null);
 			supplierComboBox.setPromptText("Supplier");
@@ -1151,7 +1141,6 @@ public class AdministratorViewController implements Initializable {
 			sumOfGoodsLabel.textProperty().bind(new SimpleDoubleProperty(sum).asString());
 			data = FXCollections.observableArrayList(receiptList);
 			movementTableView.setItems(data);
-			/* receiptList.clear(); */
 		} catch (SQLException exc) {
 			System.err.println("Error" + exc);
 		}
@@ -1198,16 +1187,14 @@ public class AdministratorViewController implements Initializable {
 							movementTableView.setItems(data);
 							quantityTextField.clear();
 							System.out.println("Count");
-							for(Receipt reci : newReceiptList) {
+							for (Receipt reci : newReceiptList) {
 								System.out.println(reci.getQuantity());
 							}
 							return;
 						}
 					}
 					System.out.println("Woo hoo");
-				} 
-				else 
-					{
+				} else {
 					newReceiptList.add(rec);
 				}
 			}
@@ -1226,7 +1213,6 @@ public class AdministratorViewController implements Initializable {
 					sum += rec.getAmount();
 				}
 				sumOfGoodsLabel.textProperty().bind(new SimpleDoubleProperty(sum).asString());
-				/* newReceiptList.clear(); */
 				data = FXCollections.observableArrayList(receiptList);
 				movementTableView.setItems(data);
 				quantityTextField.clear();
@@ -1285,7 +1271,6 @@ public class AdministratorViewController implements Initializable {
 					preparedStatement.setString(3, rec.getName());
 					preparedStatement.setInt(4, -(rec.getQuantity()));
 					preparedStatement.setDouble(5, rec.getPrice());
-					/* preparedStatement.setDouble(6, rec.getAmount()); */
 					preparedStatement.executeUpdate();
 				}
 			}
@@ -1303,7 +1288,7 @@ public class AdministratorViewController implements Initializable {
 			exc.printStackTrace();
 		}
 	}
-	
+
 	@FXML
 	private void setDataToReportBarChart(ActionEvent event) {
 		reportBarChart.getData().clear();
@@ -1321,7 +1306,8 @@ public class AdministratorViewController implements Initializable {
 				System.out.println(stocks);
 			}
 			ResultSet rs2 = ConnectionToSQL.getConnection().createStatement().executeQuery(
-					"SELECT SUM(amount) AS amount FROM receipts WHERE quantity > '0' AND add_data BETWEEN '"+ reportDatePickerFrom.getValue() + "' AND '" + reportDatePickerTo.getValue() + "';");
+					"SELECT SUM(amount) AS amount FROM receipts WHERE quantity > '0' AND add_data BETWEEN '"
+							+ reportDatePickerFrom.getValue() + "' AND '" + reportDatePickerTo.getValue() + "';");
 			while (rs2.next()) {
 				receipts = rs2.getDouble("amount");
 				series1.setName("Receipts");
@@ -1335,23 +1321,28 @@ public class AdministratorViewController implements Initializable {
 				disposals = rs3.getDouble("amount") * (-1);
 				series3.setName("Disposals");
 				series3.getData().add(new XYChart.Data("", disposals));
-				
+
 				System.out.println(disposals);
 			}
-			reportBarChart.setTitle("Statistics from " + reportDatePickerFrom.getValue() + " to " + reportDatePickerTo.getValue() + ".");
+			reportBarChart.setTitle("Statistics from " + reportDatePickerFrom.getValue() + " to "
+					+ reportDatePickerTo.getValue() + ".");
 			reportBarChart.getData().addAll(series1, series2, series3);
 			reportsPieChart.setData(pieChartList);
-			pieChartList.add(new PieChart.Data("Receipts", receipts/(stocks + receipts + disposals) * 100));
-			pieChartList.add(new PieChart.Data("Stocks", stocks/(stocks + receipts + disposals) * 100));	
-			pieChartList.add(new PieChart.Data("Disposals", disposals/(stocks + receipts + disposals) * 100));
+			pieChartList.add(new PieChart.Data("Receipts", receipts / (stocks + receipts + disposals) * 100));
+			pieChartList.add(new PieChart.Data("Stocks", stocks / (stocks + receipts + disposals) * 100));
+			pieChartList.add(new PieChart.Data("Disposals", disposals / (stocks + receipts + disposals) * 100));
 			reportsPieChart.setData(pieChartList);
 			receiptsLabel.setText(Double.toString(receipts));
 			stocksLabel.setText(Double.toString(stocks));
 			disposalsLabel.setText(Double.toString(disposals));
-			analysysLabel.setText("Analysis of work from " + reportDatePickerFrom.getValue()+ " \nto " + reportDatePickerTo.getValue() + ".");
-			analysysFirstLabel.setText("Receipts: " + receipts + " US Dollars, percentage " + String.format("%.2f", receipts/(stocks + receipts + disposals) * 100) + "%.");
-			analysysSecondLabel.setText("Stocks: " + stocks + " US Dollars, percentage " + String.format("%.2f", stocks/(stocks + receipts + disposals) * 100) + "%.");
-			analysysThirdLabel.setText("Disposals: " + disposals + " US Dollars, percentage " + String.format("%.2f", disposals/(stocks + receipts + disposals) * 100) + "%.");
+			analysysLabel.setText("Analysis of work from " + reportDatePickerFrom.getValue() + " \nto "
+					+ reportDatePickerTo.getValue() + ".");
+			analysysFirstLabel.setText("Receipts: " + receipts + " US Dollars, percentage "
+					+ String.format("%.2f", receipts / (stocks + receipts + disposals) * 100) + "%.");
+			analysysSecondLabel.setText("Stocks: " + stocks + " US Dollars, percentage "
+					+ String.format("%.2f", stocks / (stocks + receipts + disposals) * 100) + "%.");
+			analysysThirdLabel.setText("Disposals: " + disposals + " US Dollars, percentage "
+					+ String.format("%.2f", disposals / (stocks + receipts + disposals) * 100) + "%.");
 			rs.close();
 			rs2.close();
 			rs3.close();
@@ -1359,7 +1350,7 @@ public class AdministratorViewController implements Initializable {
 			exc.printStackTrace();
 		}
 	}
-		
+
 	public void showPersentage(MouseEvent event) {
 		reportsStatusLabel.setTextFill(Color.DARKORANGE);
 		reportsStatusLabel.setStyle("-fx-font: 24 arial;");
@@ -1376,6 +1367,4 @@ public class AdministratorViewController implements Initializable {
 			});
 		}
 	}
-	
-
 }
