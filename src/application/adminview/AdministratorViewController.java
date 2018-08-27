@@ -72,10 +72,8 @@ public class AdministratorViewController implements Initializable {
     private Label analysysLabel;
     @FXML
     private Label receiptsLabel;
-
     @FXML
     private Label stocksLabel;
-
     @FXML
     private Label disposalsLabel;
     @FXML
@@ -94,7 +92,6 @@ public class AdministratorViewController implements Initializable {
     private CategoryAxis axisX;
     @FXML
     private NumberAxis axisY;
-
 	@FXML
 	private Button departureOfGoodsFromWarehauseButton;
 	@FXML
@@ -119,7 +116,6 @@ public class AdministratorViewController implements Initializable {
 	private TableColumn<Receipt, Double> priceMovementTableViewColumn;
 	@FXML
 	private TableColumn<Receipt, Double> amountMovementTableViewColumn;
-
 	@FXML
 	private Label dateLabelTwo;
 	@FXML
@@ -130,53 +126,38 @@ public class AdministratorViewController implements Initializable {
 	private ComboBox<String> supplierComboBoxTwo;
 	@FXML
 	private Button showGoodsForExportButton;
-
 	@FXML
 	private Label summ;
 	@FXML
 	private Label dateLabel;
 	@FXML
 	private Button insertToDatabaseReceipt;
-
 	@FXML
 	private ComboBox<String> supplierComboBox;
-
 	@FXML
 	private TextField productNameTextField;
-
 	@FXML
 	private TextField priceOfProductTextField;
-
 	@FXML
 	private Button addProductToTableView;
-
 	@FXML
 	private Button removeProductFromReceiptTableView;
-
 	@FXML
 	private Button updateProductInTableViewButton;
-
 	@FXML
 	private TextField quantityOfProductsTexyField;
-
 	@FXML
 	private TableView<Receipt> receiptTableView;
-
 	@FXML
 	private TableColumn<Receipt, Integer> idsupplierTableColumn;
-
 	@FXML
 	private TableColumn<Receipt, String> dateSupplierTableColumn;
-
 	@FXML
 	private TableColumn<Receipt, String> nameSupplierTableColumn;
-
 	@FXML
 	private TableColumn<Receipt, Integer> quantitySupplierTableColumn;
-
 	@FXML
 	private TableColumn<Receipt, Double> priceSupplierTableColumn;
-
 	@FXML
 	private TableColumn<Receipt, Double> amountSupplierTableColumn;
 	@FXML
@@ -217,7 +198,6 @@ public class AdministratorViewController implements Initializable {
 	private TableColumn<Supplier, String> phoneColumn;
 	@FXML
 	private TableColumn<Supplier, String> contactColumn;
-
 	@FXML
 	private Button goodsReceiptButton;
 	@FXML
@@ -296,10 +276,9 @@ public class AdministratorViewController implements Initializable {
 	private ToggleGroup Role;
 	@FXML
 	private TabPane goodsReceiptTabPane;
-	/* List<Receipt> justAnotherList = new ArrayList<>(); */
 	ObservableList<Receipt> receipt;
 	private ObservableList data;
-	/* ObservableList list; */
+
 	private ObservableList<PieChart.Data> pieChartList = FXCollections.observableArrayList();
 	private ObservableList<String> choise;
 	List<Receipt> receiptList = new ArrayList<>();
@@ -310,17 +289,7 @@ public class AdministratorViewController implements Initializable {
 	
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) {
-/*		 XYChart.Series series1 = new XYChart.Series();
-	        series1.setName("Receipt");
-	        series1.getData().add(new XYChart.Data("haha", 35000.65));
-	        XYChart.Series series2 = new XYChart.Series();
-	        series2.setName("Stocks");
-	        series2.getData().add(new XYChart.Data("haha", 23000.65));
-	        XYChart.Series series3 = new XYChart.Series();
-	        series3.setName("Disposal");
-	        series3.getData().add(new XYChart.Data("haha", 15000.65));
-	        reportBarChart.getData().addAll(series1, series2, series3);*/
-		/* supplierComboBox.getItems().setAll("Supplier"); */
+
 		supplierComboBox.setItems(choise);
 		supplierComboBoxTwo.setItems(choise);
 		supplierComboBoxTwo.setPromptText("Supplier");
@@ -356,7 +325,6 @@ public class AdministratorViewController implements Initializable {
 		priceSupplierTableColumn.setCellValueFactory(new PropertyValueFactory<>("price"));
 		amountSupplierTableColumn.setCellValueFactory(new PropertyValueFactory<>("amount"));
 		movementTableView.setItems(data);
-		/* movementTableView.setItems(list); */
 		dateLabel.setText(date());
 		dateLabelTwo.setText(date());
 
@@ -381,11 +349,6 @@ public class AdministratorViewController implements Initializable {
 				}
 			}
 		};
-
-/*		receiptsLabel.setVisible(false);
-		stocksLabel.setVisible(false);
-		disposalsLabel.setVisible(false);*/
-
 
 
 		reportsStatusLabel.setVisible(false);
@@ -437,30 +400,24 @@ public class AdministratorViewController implements Initializable {
 
 		if (event.getSource() == goodsReceiptButton) {
 			setDataIntoChoiseBox();
-			/* logoMainPane.setStyle("-fx-background-color: #7FC203;"); */
 			goodsReceiptGridPane.toFront();
 			goodsReceiptPane.toFront();
 			refreshDataInSupplierTableView(event);
 		} else if (event.getSource() == goodsMovementButton) {
-			/* logoMainPane.setStyle("-fx-background-color: #FF8617;"); */
 			setDataIntoComboBox();
 			goodsMovementGridPane.toFront();
 			goodsMovementPane.toFront();
 		} else if (event.getSource() == reportsButton) {
-			/* logoMainPane.setStyle("-fx-background-color: #F17C72;"); */
 			reportsGridPane.toFront();
 			reportsPane.toFront();
 		} else if (event.getSource() == addEmployeeButton) {
-			/* logoMainPane.setStyle("-fx-background-color: #42CAFC;"); */
 			loadDataToEmployeeTableView(event);
 			addEmployeePane.toFront();
 			employeeGridPane.toFront();
 		} else if (event.getSource() == settingsButton) {
-			/* logoMainPane.setStyle("-fx-background-color:  #8673C5;"); */
 			settingsGridPane.toFront();
 			settingsPane.toFront();
 		} else {
-			/* logoMainPane.setStyle("-fx-background-color:  #008BC1;"); */
 			mainGridPane.toFront();
 			mainPane.toFront();
 		}
