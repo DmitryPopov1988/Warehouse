@@ -7,9 +7,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ResourceBundle;
-
 import application.controllers.ConnectionToSQL;
-import application.controllers.Users;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.Node;
@@ -29,7 +27,7 @@ public class PasswordWindowController implements Initializable {
 
 	private static Connection connection;
 	private static PreparedStatement preparedStatment;
-	
+
 	@FXML
 	private Hyperlink link = new Hyperlink("Forgotten your password?");
 	@FXML
@@ -40,14 +38,13 @@ public class PasswordWindowController implements Initializable {
 	private Button login;
 	@FXML
 	private Label informationLabel;
-	private Users currentUser;
 
 	@FXML
 	private void login(ActionEvent event) throws SQLException {
 		try {
 			if (retriveData(userField.getText(), passwordField.getText())) {
-				if(isAdmin(userField.getText(), passwordField.getText())) {
-				openAdministratorView(event);
+				if (isAdmin(userField.getText(), passwordField.getText())) {
+					openAdministratorView(event);
 				}
 				informationLabel.setText("Has entered.");
 				informationLabel.setTextFill(Color.RED);
@@ -61,22 +58,22 @@ public class PasswordWindowController implements Initializable {
 			exc.printStackTrace();
 		}
 	}
-	
+
 	@FXML
 	private void linkToForgetPasswordDialog(ActionEvent event) throws IOException {
-				AnchorPane anchorPane;
-				try {
-					FXMLLoader loader = new FXMLLoader();
-					loader.setLocation(getClass().getResource("view/ForgetPasswordDialog.fxml"));
-					anchorPane = loader.load();
-					Scene tableViewScene = new Scene(anchorPane);
-					Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
-					window.setScene(tableViewScene);
-					window.show();
-				} catch (IOException e) {
-					e.printStackTrace();
-				}
-			} 
+		AnchorPane anchorPane;
+		try {
+			FXMLLoader loader = new FXMLLoader();
+			loader.setLocation(getClass().getResource("view/ForgetPasswordDialog.fxml"));
+			anchorPane = loader.load();
+			Scene tableViewScene = new Scene(anchorPane);
+			Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
+			window.setScene(tableViewScene);
+			window.show();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+	}
 
 	private boolean retriveData(String userName, String password) throws SQLException {
 		ResultSet resultSet = null;
@@ -100,8 +97,8 @@ public class PasswordWindowController implements Initializable {
 			connection.close();
 		}
 	}
-	
-	private void openAdministratorView (ActionEvent event) {
+
+	private void openAdministratorView(ActionEvent event) {
 		AnchorPane anchorPane;
 		try {
 			FXMLLoader loader = new FXMLLoader();
@@ -116,8 +113,8 @@ public class PasswordWindowController implements Initializable {
 			e.printStackTrace();
 		}
 	}
-	
-	//Get from database user role.
+
+	// Get from database user role.
 	private boolean isAdmin(String userName, String password) throws SQLException {
 		ResultSet resultSet = null;
 		connection = ConnectionToSQL.getConnection();
@@ -130,7 +127,7 @@ public class PasswordWindowController implements Initializable {
 			resultSet = preparedStatment.executeQuery();
 			while (resultSet.next()) {
 				role = resultSet.getString("Role");
-				if(role.equals("Admin")) 
+				if (role.equals("Admin"))
 					return true;
 			}
 			return false;

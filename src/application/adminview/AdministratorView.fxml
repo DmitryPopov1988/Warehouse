@@ -109,7 +109,7 @@
                   <Image url="@images/icons8_Fork_Lift_100px_5.png" />
                </image>
             </ImageView>
-            <Label layoutX="84.0" layoutY="49.0" text="Warehause">
+            <Label layoutX="84.0" layoutY="49.0" text="Warehouse">
                <font>
                   <Font size="35.0" />
                </font>

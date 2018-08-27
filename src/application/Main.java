@@ -1,7 +1,6 @@
 package application;
 
 import java.io.IOException;
-
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
@@ -15,7 +14,7 @@ public class Main extends Application {
 	@Override
 	public void start(Stage primaryStage) throws IOException {
 		stage = primaryStage;
-		stage.setTitle("Warehause");
+		stage.setTitle("Warehouse");
 		FXMLLoader loader = new FXMLLoader(Main.class.getResource("PasswordWindow.fxml"));
 		AnchorPane panel = new AnchorPane();
 		panel = loader.load();
