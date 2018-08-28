@@ -12,7 +12,8 @@ Login into system provides by entering own account's login and password in a spe
 
 If the password was forgotten, the application provides automatic sending of passwords to the employees email address which were given to  at registration.
 
-![email](https://user-images.githubusercontent.com/42721137/44755050-307a4e80-ab2d-11e8-98d6-a7de79efc589.png)
+![email](https://user-images.githubusercontent.com/42721137/44755156-a2eb2e80-ab2d-11e8-9631-b19387fe0b4e.png)
+
 
 
 
