@@ -8,6 +8,12 @@ Graphic design of application is made by [JavaFX](https://wiki.openjdk.java.net/
 
 Login into system provides by entering own account's login and password in a special window when application starts.
 
+![enter](https://user-images.githubusercontent.com/42721137/44754677-80581600-ab2b-11e8-9d24-6b1e1a32e445.png)
+
+If the password was forgotten, the application provides automatic sending of passwords to the employees email address which were given to  at registration.
+
+
+
 
 
 
