@@ -60,6 +60,7 @@ A special tab to create record of receipt at the warehouse. Here you choose from
 
 Window where you can see all current stocks at the warehouse by dates of addition and suppliers. And here you can select of existing in DB goods, change quantity and after make their disposal (shipment from the warehouse).    
 
+![export](https://user-images.githubusercontent.com/42721137/44780966-dfe60e00-ab8b-11e8-86e6-b764fab759e6.png)
 
 
 
