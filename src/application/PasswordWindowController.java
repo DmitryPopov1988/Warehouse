@@ -39,13 +39,21 @@ public class PasswordWindowController implements Initializable {
 	@FXML
 	private Label informationLabel;
 
+	/*
+	 * 
+	 * 
+	 * Verification by login and password is removed specially for viewing.
+	 * 
+	 * 
+	 * */
+	
 	@FXML
 	private void login(ActionEvent event) throws SQLException {
-		try {
+/*		try {
 			if (retriveData(userField.getText(), passwordField.getText())) {
-				if (isAdmin(userField.getText(), passwordField.getText())) {
+				if (isAdmin(userField.getText(), passwordField.getText())) {*/
 					openAdministratorView(event);
-				}
+/*				}
 				informationLabel.setText("Has entered.");
 				informationLabel.setTextFill(Color.RED);
 				informationLabel.setVisible(true);
@@ -56,7 +64,7 @@ public class PasswordWindowController implements Initializable {
 			}
 		} catch (SQLException exc) {
 			exc.printStackTrace();
-		}
+		}*/
 	}
 
 	@FXML
