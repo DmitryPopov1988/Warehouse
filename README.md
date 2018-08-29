@@ -4,6 +4,12 @@
   <img src="https://user-images.githubusercontent.com/42721137/44773144-7a3c5680-ab78-11e8-99e2-971de9ae9ea2.png"><br><br>
 </div>
 
+Warehouse is application for control and accounting goods in the warehouses. It allows:
+- :articulated_lorry: add and store data about suppliers;
+- :clipboard: save records about receipts and disposals of goods;
+- :bar_chart: make analysis of the work;
+- :busts_in_silhouette: multi-user use and administration.
+
 Graphic design of application is made by [JavaFX](https://wiki.openjdk.java.net/display/OpenJFX/Main) platform. For storing data is used [MySQL](https://www.mysql.com) server.
 
 ## Intention
