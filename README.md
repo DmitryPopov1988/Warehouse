@@ -75,6 +75,11 @@ Administrator window where you can register a new application user or edit curre
 
 ![employee](https://user-images.githubusercontent.com/42721137/44782282-5fc1a780-ab8f-11e8-9a08-6f9b0ecd45bd.png)
 
+Everywhere I tried to do an input checkers:
+
+![third](https://user-images.githubusercontent.com/42721137/44783244-67368000-ab92-11e8-9fa6-80d89dc870a2.png)
+![first](https://user-images.githubusercontent.com/42721137/44783246-67368000-ab92-11e8-80ce-60f7e6a3100a.png)
+![second](https://user-images.githubusercontent.com/42721137/44783247-67cf1680-ab92-11e8-850f-39ec97e6ac85.png)
 
 
 
