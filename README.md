@@ -45,7 +45,7 @@ On the left are the button-tabs for working with the application.
 
 - Suppleirs tab. 
 
-There you can manage your suppliers (add new supplier, delete from DB, change supplier's records). 
+Here you can manage your suppliers (add new supplier, delete from DB, change supplier's records). 
 Suppliers's contracts in PDF format are stored in the local storage. In database only links for them.
 
 ![supplier](https://user-images.githubusercontent.com/42721137/44779140-5b918c00-ab87-11e8-96a1-d0ea522991be.png)
@@ -58,6 +58,7 @@ A special tab to create record of receipt at the warehouse. Here you choose from
 
 - [x] Goods movement
 
+Window where you can see all current stocks at the warehouse by dates of addition and suppliers. And here you can select of existing in DB goods, change quantity and after make their disposal (shipment from the warehouse).    
 
 
 
