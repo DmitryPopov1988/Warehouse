@@ -30,7 +30,7 @@ java -jar ./target/Warehouse-0.0.1-SNAPSHOT-jar-with-dependencies.jar
 
 ## Deployment
 ```bash
-CREATE TABLE `data`.`rec` (
+CREATE TABLE `data`.`receipts` (
   `idreceipts` INT(11) NOT NULL,
   `idsupplier` INT(11) NOT NULL,
   `add_data` VARCHAR(45) NOT NULL,
