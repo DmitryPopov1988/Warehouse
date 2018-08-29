@@ -30,7 +30,7 @@ java -jar ./target/Warehouse-0.0.1-SNAPSHOT-jar-with-dependencies.jar
 
 ## Deployment
 By default app looks for `data` MySQL database at `localhost:3306` with credentials `root/admin`. By the way, this can be configured in `dbconnection.properties`.
-Application also needs 3 DB tables and trigger for calculating amount in `receipts`. 
+Application also needs 3 DB tables and trigger for calculating amount in `receipts`. Below code for creating tables in MySQL. 
 - Receipts table
 ```bash
 CREATE TABLE `data`.`receipts` (
