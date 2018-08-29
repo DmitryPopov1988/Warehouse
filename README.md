@@ -22,7 +22,11 @@ Build jar:
 ```bash
 mvn clean package assembly:single
 ```
+To starts application run:
 
+```bash
+java -jar ./target/Warehouse-0.0.1-SNAPSHOT-jar-with-dependencies.jar
+```
 ## Description
 
 - [x] Login window
