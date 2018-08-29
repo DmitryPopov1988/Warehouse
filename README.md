@@ -27,6 +27,9 @@ To start application run:
 ```bash
 java -jar ./target/Warehouse-0.0.1-SNAPSHOT-jar-with-dependencies.jar
 ```
+
+## Deployment
+
 ## Description
 
 - [x] Login window
