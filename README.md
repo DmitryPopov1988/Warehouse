@@ -29,7 +29,7 @@ java -jar ./target/Warehouse-0.0.1-SNAPSHOT-jar-with-dependencies.jar
 ```
 
 ## Deployment
-By default app looks for `data` MySQL database at `localhost:3306` with credentials `db.username/db.password`. By the way, this can be configured in `dbconnection.properties`.
+By default app looks for `data` MySQL database at `localhost:3306` with credentials `root/admin`. By the way, this can be configured in `dbconnection.properties`.
 
 ```bash
 CREATE TABLE `data`.`receipts` (
