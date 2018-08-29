@@ -16,7 +16,7 @@ public class ConnectionToSQL {
 
 	public static Connection getConnection() {
 		try {
-			fis = new FileInputStream("src/application/view/dbconnection.properties");
+			fis = new FileInputStream("src/application/dbconnection.properties");
 			property.load(fis);
 			String driver = property.getProperty("db.driver");
 			String url = property.getProperty("db.url");
