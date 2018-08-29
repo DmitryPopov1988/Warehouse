@@ -64,13 +64,16 @@ Window where you can see all current stocks at the warehouse by dates of additio
 
 - [x] Analysys window
 
-From one date to another date you can see progress of work your warehause: current stocks, quantity shipped goods and recipts during this period in percents and dollars).
+From one date to another date you can see progress of work your warehause: current stocks, quantity shipped goods and recipts during this period in percents and dollars.
 The aggregate functions MySQL are used to calculate this stats.
 
 ![analysys](https://user-images.githubusercontent.com/42721137/44781427-0c4e5a00-ab8d-11e8-886f-65eb1c8114f8.png)
 
+- [x] Add employee window
 
+Administrator window where you can register a new application user or edit current user's record.
 
+![employee](https://user-images.githubusercontent.com/42721137/44782282-5fc1a780-ab8f-11e8-9a08-6f9b0ecd45bd.png)
 
 
 
