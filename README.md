@@ -32,7 +32,8 @@ Main screen after login. On the left are the button-tabs for working with the ap
 
 - [x] Goods receipt
 
-      - First nested list item
+- Suppleirs tab. 
+There you can manage your
 
 
 
