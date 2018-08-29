@@ -56,11 +56,17 @@ A special tab to create record of receipt at the warehouse. Here you choose from
 
 ![receipt](https://user-images.githubusercontent.com/42721137/44779577-87614180-ab88-11e8-9e26-19bcbb82f43e.png)
 
-- [x] Goods movement
+- [x] Goods movement window
 
 Window where you can see all current stocks at the warehouse by dates of addition and suppliers. And here you can select of existing in DB goods, change quantity and after make their disposal (shipment from the warehouse).    
 
 ![export](https://user-images.githubusercontent.com/42721137/44780966-dfe60e00-ab8b-11e8-86e6-b764fab759e6.png)
+
+- [x] Analysys window
+
+Window where you can see all current stocks at the warehouse by dates of addition and suppliers. And here you can select of existing in DB goods, change quantity and after make their disposal (shipment from the warehouse). 
+
+![analysys](https://user-images.githubusercontent.com/42721137/44781258-91853f00-ab8c-11e8-9d41-0d6217ceb04e.png)
 
 
 
