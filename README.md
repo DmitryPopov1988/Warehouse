@@ -23,17 +23,23 @@ Login into system provides by entering own account's login and password in a spe
 
 ![enter](https://user-images.githubusercontent.com/42721137/44755149-9bc42080-ab2d-11e8-9125-00da6da028d6.png)
 
+
+
 - [x] Password sender
 
 If user password was forgotten, the application provides automatic sending of passwords by email to the employees email addresses which were inserted into database in time of the registration. A special dialog window was added.
 
 ![email](https://user-images.githubusercontent.com/42721137/44755556-5bfe3880-ab2f-11e8-80ec-ffa500da1af4.png)
 
+
+
 - [x] Main screen after login
 
 On the left are the button-tabs for working with the application.
 
 ![home](https://user-images.githubusercontent.com/42721137/44778047-b83f7780-ab84-11e8-8ad4-a67c5d12365e.png)
+
+
 
 - [x] Goods receipt
 
