@@ -15,6 +15,21 @@ Graphic design of application is made by [JavaFX](https://wiki.openjdk.java.net/
 ## Intention
 I wanted to make an application that could be used usefully for work of some business. The idea was to start develop an application for  logistics companies that could keep records of current stocks of goods in the warehouses, allow accounting receipts and disposals of goods and generate some reports for progress control.
 
+## How to run 
+
+Build jar:
+
+```bash
+mvn clean package assembly:single
+```
+To start application run:
+
+```bash
+java -jar ./target/Warehouse-0.0.1-SNAPSHOT-jar-with-dependencies.jar
+```
+
+## Deployment
+
 ## Description
 
 - [x] Login window
@@ -71,7 +86,7 @@ The aggregate functions MySQL are used to calculate this stats.
 
 - [x] Add employee window
 
-Administrator window where you can register a new application user or edit current user's record.
+Administrator window where you can register a new user of application or edit user's current record.
 
 ![employee](https://user-images.githubusercontent.com/42721137/44782282-5fc1a780-ab8f-11e8-9a08-6f9b0ecd45bd.png)
 
