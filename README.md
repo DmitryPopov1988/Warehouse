@@ -31,6 +31,7 @@ Main screen after login. On the left are the button-tabs for working with the ap
 ![home](https://user-images.githubusercontent.com/42721137/44778047-b83f7780-ab84-11e8-8ad4-a67c5d12365e.png)
 
 - [x] Goods receipt
+
       - First nested list item
 
 
