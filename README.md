@@ -39,9 +39,11 @@ Suppliers's contracts in PDF format are stored in the local storage. In database
 
 ![supplier](https://user-images.githubusercontent.com/42721137/44779140-5b918c00-ab87-11e8-96a1-d0ea522991be.png)
 
+- Receipt tab. 
 
+A special tab to create record of receipt at the warehouse. Here you choose from DB the existing list of suppliers and add goods to the table. After adding all goods in table you need to insert records to DB.
 
-
+![receipt](https://user-images.githubusercontent.com/42721137/44779577-87614180-ab88-11e8-9e26-19bcbb82f43e.png)
 
 
 
