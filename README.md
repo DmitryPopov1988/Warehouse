@@ -54,14 +54,18 @@ CREATE TABLE `data`.`suppliers` (
 ```
 
 ```bash
-CREATE TABLE `data`.`suppliers` (
-  `idsuppliers` INT NOT NULL AUTO_INCREMENT,
-  `name` VARCHAR(145) NOT NULL,
-  `country` VARCHAR(145) NOT NULL,
-  `address` VARCHAR(145) NOT NULL,
-  `phone` VARCHAR(145) NOT NULL,
-  `contract` VARCHAR(145) NOT NULL,
-  UNIQUE INDEX `idsuppliers_UNIQUE` (`idsuppliers` ASC));
+CREATE TABLE `data`.`users` (
+  `idusers` INT(12) NOT NULL AUTO_INCREMENT,
+  `FirstName` VARCHAR(145) NOT NULL,
+  `LastName` VARCHAR(145) NOT NULL,
+  `Login` VARCHAR(145) NOT NULL,
+  `Password` VARCHAR(145) NULL,
+  `Email` VARCHAR(145) NOT NULL,
+  `Role` VARCHAR(45) NOT NULL,
+  PRIMARY KEY (`idusers`),
+  UNIQUE INDEX `idusers_UNIQUE` (`idusers` ASC) VISIBLE,
+  UNIQUE INDEX `Login_UNIQUE` (`Login` ASC) VISIBLE,
+  UNIQUE INDEX `Email_UNIQUE` (`Email` ASC) VISIBLE);
 ```
 
 ## Description
