@@ -66,7 +66,8 @@ Window where you can see all current stocks at the warehouse by dates of additio
 
 Window where you can see all current stocks at the warehouse by dates of addition and suppliers. And here you can select of existing in DB goods, change quantity and after make their disposal (shipment from the warehouse). 
 
-![analysys](https://user-images.githubusercontent.com/42721137/44781258-91853f00-ab8c-11e8-9d41-0d6217ceb04e.png)
+![analysys](https://user-images.githubusercontent.com/42721137/44781361-d0b39000-ab8c-11e8-864b-473f67ca3af6.png)
+
 
 
 
