@@ -42,6 +42,27 @@ CREATE TABLE `data`.`receipts` (
   UNIQUE INDEX `idreceipts_UNIQUE` (`idreceipts` ASC) VISIBLE);
 ```
 
+```bash
+CREATE TABLE `data`.`suppliers` (
+  `idsuppliers` INT NOT NULL AUTO_INCREMENT,
+  `name` VARCHAR(145) NOT NULL,
+  `country` VARCHAR(145) NOT NULL,
+  `address` VARCHAR(145) NOT NULL,
+  `phone` VARCHAR(145) NOT NULL,
+  `contract` VARCHAR(145) NOT NULL,
+  UNIQUE INDEX `idsuppliers_UNIQUE` (`idsuppliers` ASC));
+```
+
+```bash
+CREATE TABLE `data`.`suppliers` (
+  `idsuppliers` INT NOT NULL AUTO_INCREMENT,
+  `name` VARCHAR(145) NOT NULL,
+  `country` VARCHAR(145) NOT NULL,
+  `address` VARCHAR(145) NOT NULL,
+  `phone` VARCHAR(145) NOT NULL,
+  `contract` VARCHAR(145) NOT NULL,
+  UNIQUE INDEX `idsuppliers_UNIQUE` (`idsuppliers` ASC));
+```
 
 ## Description
 
