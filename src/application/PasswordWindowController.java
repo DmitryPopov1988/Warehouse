@@ -45,6 +45,7 @@ public class PasswordWindowController implements Initializable {
 	 * Verification by login and password is removed specially for viewing.
 	 * 
 	 * 
+	 * 
 	 * */
 	
 	@FXML
