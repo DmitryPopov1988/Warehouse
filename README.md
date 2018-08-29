@@ -56,6 +56,8 @@ A special tab to create record of receipt at the warehouse. Here you choose from
 
 ![receipt](https://user-images.githubusercontent.com/42721137/44779577-87614180-ab88-11e8-9e26-19bcbb82f43e.png)
 
+- [x] Goods movement
+
 
 
 
