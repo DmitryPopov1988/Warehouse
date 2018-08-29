@@ -33,7 +33,8 @@ Main screen after login. On the left are the button-tabs for working with the ap
 - [x] Goods receipt
 
 - Suppleirs tab. 
-There you can manage your
+
+There you can manage your suppliers (add new, delete from DB, change supplier's records)
 
 
 
