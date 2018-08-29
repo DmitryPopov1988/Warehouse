@@ -34,7 +34,11 @@ Main screen after login. On the left are the button-tabs for working with the ap
 
 - Suppleirs tab. 
 
-There you can manage your suppliers (add new, delete from DB, change supplier's records)
+There you can manage your suppliers (add new supplier, delete from DB, change supplier's records). 
+Suppliers's contracts in PDF format are stored in the local storage. In database only links for them.
+
+![supplier](https://user-images.githubusercontent.com/42721137/44779140-5b918c00-ab87-11e8-96a1-d0ea522991be.png)
+
 
 
 
