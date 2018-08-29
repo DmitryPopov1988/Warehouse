@@ -86,7 +86,7 @@ The aggregate functions MySQL are used to calculate this stats.
 
 - [x] Add employee window
 
-Administrator window where you can register a new application user or edit current user's record.
+Administrator window where you can register a new user of application or edit user's current record.
 
 ![employee](https://user-images.githubusercontent.com/42721137/44782282-5fc1a780-ab8f-11e8-9a08-6f9b0ecd45bd.png)
 
