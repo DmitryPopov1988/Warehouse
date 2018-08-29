@@ -30,7 +30,8 @@ java -jar ./target/Warehouse-0.0.1-SNAPSHOT-jar-with-dependencies.jar
 
 ## Deployment
 By default app looks for `data` MySQL database at `localhost:3306` with credentials `root/admin`. By the way, this can be configured in `dbconnection.properties`.
-
+Application also needs 3 DB tables and trigger for calculating amount in `receipts`. 
+- Receipts table
 ```bash
 CREATE TABLE `data`.`receipts` (
   `idreceipts` INT(11) NOT NULL,
@@ -43,7 +44,7 @@ CREATE TABLE `data`.`receipts` (
   PRIMARY KEY (`idreceipts`),
   UNIQUE INDEX `idreceipts_UNIQUE` (`idreceipts` ASC) VISIBLE);
 ```
-
+- Suppliers table
 ```bash
 CREATE TABLE `data`.`suppliers` (
   `idsuppliers` INT NOT NULL AUTO_INCREMENT,
@@ -54,7 +55,7 @@ CREATE TABLE `data`.`suppliers` (
   `contract` VARCHAR(145) NOT NULL,
   UNIQUE INDEX `idsuppliers_UNIQUE` (`idsuppliers` ASC));
 ```
-
+- Users table
 ```bash
 CREATE TABLE `data`.`users` (
   `idusers` INT(12) NOT NULL AUTO_INCREMENT,
@@ -68,6 +69,17 @@ CREATE TABLE `data`.`users` (
   UNIQUE INDEX `idusers_UNIQUE` (`idusers` ASC) VISIBLE,
   UNIQUE INDEX `Login_UNIQUE` (`Login` ASC) VISIBLE,
   UNIQUE INDEX `Email_UNIQUE` (`Email` ASC) VISIBLE);
+```
+- Trigger for Receipts
+```bash
+DELIMITER $$
+CREATE TRIGGER multipler BEFORE UPDATE
+    ON receipts FOR EACH ROW
+BEGIN
+    SET NEW.amount = NEW.quantity * NEW.price
+END;
+
+DELIMITER ;
 ```
 
 ## Description
