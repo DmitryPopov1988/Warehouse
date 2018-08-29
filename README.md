@@ -26,6 +26,11 @@ If user password was forgotten, the application provides automatic sending of pa
 
 ![email](https://user-images.githubusercontent.com/42721137/44755556-5bfe3880-ab2f-11e8-80ec-ffa500da1af4.png)
 
+Main screen after login.
+
+![home](https://user-images.githubusercontent.com/42721137/44778047-b83f7780-ab84-11e8-8ad4-a67c5d12365e.png)
+
+
 
 
 
