@@ -17,7 +17,7 @@ I wanted to make an application that could be used usefully for work of some bus
 
 ## Description
 
-- [x] Login
+- [x] Login window
 
 Login into system provides by entering own account's login and password in a special window when application starts.
 
@@ -25,7 +25,7 @@ Login into system provides by entering own account's login and password in a spe
 
 
 
-- [x] Password sender
+- [x] Password sender window
 
 If user password was forgotten, the application provides automatic sending of passwords by email to the employees email addresses which were inserted into database in time of the registration. A special dialog window was added.
 
@@ -33,7 +33,7 @@ If user password was forgotten, the application provides automatic sending of pa
 
 
 
-- [x] Main screen after login
+- [x] Main window 
 
 On the left are the button-tabs for working with the application.
 
